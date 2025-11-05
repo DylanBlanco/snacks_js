@@ -15,7 +15,6 @@ inputNum1.style.height = '20%';
 inputNum1.style.marginRight = '5px';
 cardTask1.appendChild(inputNum1);
 
-
 const inputNum2 = document.createElement('input');
 inputNum2.type = 'number';
 inputNum2.placeholder = 'inserisci num2';
@@ -24,11 +23,22 @@ inputNum2.style.height = '20%';
 inputNum2.style.marginRight = '5px';
 cardTask1.appendChild(inputNum2);
 
-const btnCalcSum = document.createElement('button');
-btnCalcSum.innerHTML = 'Calcola Somma';
-btnCalcSum.style.width = '20%';
-btnCalcSum.style.height = '20%';
-cardTask1.appendChild(btnCalcSum);
+const btnCalcSumTask1 = document.createElement('button');
+btnCalcSumTask1.innerHTML = 'Calcola Somma';
+btnCalcSumTask1.style.width = '20%';
+btnCalcSumTask1.style.height = '20%';
+cardTask1.appendChild(btnCalcSumTask1);
+
+const resultSum = document.createElement('div');
+cardTask1.appendChild(resultSum);
+
+btnCalcSumTask1.addEventListener('click', () => {
+    const numT1 = parseFloat(inputNum1.value);
+    const numT2 = parseFloat(inputNum2.value);
+    const sum = numT1 + numT2;
+    resultSum.innerHTML = `risultato: ${sum}`;
+})
+cardTask1.appendChild(resultSum);
 
 // funzione per creare una card
 function createCardJs() {
