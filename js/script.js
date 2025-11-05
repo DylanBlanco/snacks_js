@@ -5,7 +5,7 @@ const containerElement = document.getElementById('container-cards');
     TASK1 - calcola la somma di due numeri
 --------------------------------------------------------------------------------------------------- */
 const cardTask1 = createCardJs();  // aggiungi card alla pagina
-const titleT1 = document.createElement('h3');
+const titleT1 = document.createElement('h4');
 titleT1.innerHTML = 'Somma di due numeri';
 cardTask1.appendChild(titleT1);
 
@@ -42,6 +42,13 @@ btnCalcSumTask1.addEventListener('click', () => {
 })
 cardTask1.appendChild(resultSum);
 
+/* ---------------------------------------------------------------------------------------------------
+    * TASK2 - crea un array di giocattolli vuoto e chiedi all'utente di inserirne 5
+--------------------------------------------------------------------------------------------------- */
+const cardTask2 = createCardJs();
+const titleTask2 = document.createElement('h4');
+titleTask2.innerHTML = 'Task2 - inserisci 5 giocattoli';
+cardTask2.appendChild(titleTask2);
 // funzione per creare una card
 function createCardJs() {
     const cardJs = document.createElement('div');
