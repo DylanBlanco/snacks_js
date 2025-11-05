@@ -37,12 +37,12 @@ main {
  * STILI PER LA CARD
 ******************************************/
 .card-js {
-    width: 300px;
+    width: 350px;
     height: 200px;
     border: 1px solid black;
     display: flex;
     justify-content: center;
-    align-items: center;
+    flex-wrap: wrap;
     font-size: 1.5rem;
     background-color: #eee8e8;
     padding: 1rem 0.5rem;

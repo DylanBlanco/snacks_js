@@ -1,8 +1,3 @@
-// selezione del container dove inserire le card
-const containerElement = document.getElementById('container-cards');
-// aggiungi card alla pagina
-createCardJs();
-
 
 // funzione per creare una card
 function createCardJs() {
@@ -15,4 +10,6 @@ function createCardJs() {
     cardJs.style.margin = '8px';
     cardJs.style.boxShadow = '2px 2px 5px rgba(0, 0, 0, 0.1)';
     containerElement.appendChild(cardJs);
+
+    return cardJs;
 }
