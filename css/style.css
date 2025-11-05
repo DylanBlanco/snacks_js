@@ -6,3 +6,44 @@ RESET
     padding: 0;
     box-sizing: border-box;
 }
+
+/******************************************
+ * GENERAL STYLES
+******************************************/
+main {
+    min-height: 100vh;
+    background-color: #e0e0e0;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 5rem;
+}
+
+#container-cards {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 5rem;
+}
+
+/******************************************
+ * STILI PER LA CARD
+******************************************/
+.card-js {
+    width: 300px;
+    height: 200px;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    background-color: #eee8e8;
+    padding: 1rem 0.5rem;
+}
