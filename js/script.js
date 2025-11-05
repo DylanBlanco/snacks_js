@@ -42,6 +42,7 @@ btnCalcSumTask1.addEventListener('click', () => {
 })
 cardTask1.appendChild(resultSum);
 
+
 /* ---------------------------------------------------------------------------------------------------
     * TASK2 - crea un array di giocattolli vuoto e chiedi all'utente di inserirne 5
 --------------------------------------------------------------------------------------------------- */
@@ -49,6 +50,23 @@ const cardTask2 = createCardJs();
 const titleTask2 = document.createElement('h4');
 titleTask2.innerHTML = 'Task2 - inserisci 5 giocattoli';
 cardTask2.appendChild(titleTask2);
+
+const toysArray = [];
+
+const inputToy = document.createElement('input');
+inputToy.type = 'text';
+inputToy.placeholder = 'inserisci un giocattolo';
+inputToy.style.width = '80%';
+inputToy.style.height = '20%';
+inputToy.style.marginRight = '5px';
+cardTask2.appendChild(inputToy);
+const btnAddToy = document.createElement('button');
+btnAddToy.innerHTML = 'Add Toy';
+btnAddToy.style.width = '18%';
+btnAddToy.style.height = '20%';
+cardTask2.appendChild(btnAddToy);
+
+
 // funzione per creare una card
 function createCardJs() {
     const cardJs = document.createElement('div');
