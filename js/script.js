@@ -1,7 +1,9 @@
-// selezione del container dove inserire le card
+// selezione del container per inserire le card
 const containerElement = document.getElementById('container-cards');
 
-// task 1: calcola la somma di due numeri
+/* ---------------------------------------------------------------------------------------------------
+    TASK1 - calcola la somma di due numeri
+--------------------------------------------------------------------------------------------------- */
 const cardTask1 = createCardJs();  // aggiungi card alla pagina
 const titleT1 = document.createElement('h3');
 titleT1.innerHTML = 'Somma di due numeri';
