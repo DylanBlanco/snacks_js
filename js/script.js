@@ -5,31 +5,33 @@ const containerElement = document.getElementById('container-cards');
     TASK1 - calcola la somma di due numeri
 --------------------------------------------------------------------------------------------------- */
 const cardTask1 = createCardJs();  // aggiungi card alla pagina
-const titleT1 = document.createElement('h3');
-titleT1.innerHTML = 'Somma di due numeri';
+const titleT1 = document.createElement('h4');
+titleT1.innerHTML = 'Task1 - Somma di due numeri';
 cardTask1.appendChild(titleT1);
+
+const divInputT1 = document.createElement('div');
+divInputT1.style.marginTop = '10px';
+divInputT1.style.marginBottom = '10px';
+cardTask1.appendChild(divInputT1);
 
 const inputNum1 = document.createElement('input');
 inputNum1.type = 'number';
 inputNum1.placeholder = 'inserisci num1';
 inputNum1.style.width = '35%';
-inputNum1.style.height = '20%';
-inputNum1.style.marginRight = '5px';
-cardTask1.appendChild(inputNum1);
+inputNum1.style.marginRight = '3px';
 
 const inputNum2 = document.createElement('input');
 inputNum2.type = 'number';
 inputNum2.placeholder = 'inserisci num2';
 inputNum2.style.width = '35%';
-inputNum2.style.height = '20%';
 inputNum2.style.marginRight = '5px';
-cardTask1.appendChild(inputNum2);
 
 const btnCalcSumTask1 = document.createElement('button');
-btnCalcSumTask1.innerHTML = 'Calcola Somma';
+btnCalcSumTask1.innerHTML = 'Calcola';
 btnCalcSumTask1.style.width = '20%';
-btnCalcSumTask1.style.height = '20%';
-cardTask1.appendChild(btnCalcSumTask1);
+divInputT1.appendChild(inputNum1);
+divInputT1.appendChild(inputNum2);
+divInputT1.appendChild(btnCalcSumTask1);
 
 const resultSum = document.createElement('div');
 cardTask1.appendChild(resultSum);
@@ -41,6 +43,56 @@ btnCalcSumTask1.addEventListener('click', () => {
     resultSum.innerHTML = `risultato: ${sum}`;
 })
 cardTask1.appendChild(resultSum);
+
+
+/* ---------------------------------------------------------------------------------------------------
+    * TASK2 - crea un array di giocattolli vuoto e chiedi all'utente di inserirne 5
+--------------------------------------------------------------------------------------------------- */
+const cardTask2 = createCardJs();
+const titleTask2 = document.createElement('h4');
+titleTask2.innerHTML = 'Task2 - inserisci 5 giocattoli';
+cardTask2.appendChild(titleTask2);
+const divInputT2 = document.createElement('div');
+divInputT2.style.marginTop = '10px';
+divInputT2.style.marginBottom = '10px';
+cardTask2.appendChild(divInputT2);
+
+const toysArray = [];
+
+const inputToy = document.createElement('input');
+inputToy.type = 'text';
+inputToy.placeholder = 'inserisci nome giocattolo';
+inputToy.style.width = '80%';
+inputToy.style.marginRight = '5px';
+divInputT2.appendChild(inputToy);
+
+const btnAddToy = document.createElement('button');
+btnAddToy.innerHTML = 'Add Toy';
+btnAddToy.style.width = '18%';
+divInputT2.appendChild(btnAddToy);
+
+const resultToys = document.createElement('div');
+cardTask2.appendChild(resultToys);
+
+btnAddToy.addEventListener('click', () => {
+    const nomeGiocattolo = inputToy.value.trim();
+    
+    resultToys.innerHTML = `Elenco giocattoli:`;
+    if (nomeGiocattolo && toysArray.length < 5) {
+        toysArray.push(nomeGiocattolo);
+        inputToy.value = '';
+        toysArray.forEach((toy, i) => {
+            resultToys.innerHTML += `<p>Giocattolo ${i + 1}: ${toy}</p>`;
+        });
+    }
+    else if (toysArray.length >= 5) {
+        resultToys.innerHTML = `Hai già inserito 5 giocattoli.`;
+        toysArray.forEach((toy, i) => {
+            resultToys.innerHTML += `<p>Giocattolo ${i + 1}: ${toy}</p>`;
+        });
+    }
+});
+
 
 // funzione per creare una card
 function createCardJs() {
