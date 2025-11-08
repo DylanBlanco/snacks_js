@@ -37,6 +37,14 @@ main {
     margin: 10px 0;
 }
 
+ul {
+    list-style: none;
+    margin-bottom: 0.5rem;
+}
+
+li {
+    margin-left: 20px;
+}
 
 /******************************************
  * STILI PER LA CARD

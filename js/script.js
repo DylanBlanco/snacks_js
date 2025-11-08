@@ -157,5 +157,24 @@ const studenti = [
         voti: [30, 30, 29]
     }
 ];
-
 console.log(studenti);
+
+const resultStudents = document.createElement('div');
+resultStudents.style.fontSize = '14px';
+cardTask3.appendChild(resultStudents);
+
+studenti.forEach((s, i) => {
+    resultStudents.innerHTML +=
+    `
+        <ul><b>(${i+1})</b> Studente, <strong>${s.cognome} ${s.nome}</strong>
+            <li>ID: ${s.id}</li>
+            <li>Età: ${s.eta}</li>
+            <li>Corso: ${s.corso}</li>
+            <li>
+                <ul>Voti:
+                    <li>${s.voti}</li>
+                </ul>
+            </li>
+        </ul>
+    `;
+});
