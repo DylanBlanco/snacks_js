@@ -118,3 +118,8 @@ btnAddToy.addEventListener('click', () => {
             Calcola il numero totale degli studenti,
             Trova tutti gli studenti di un corso specifico
 --------------------------------------------------------------------------------------------------- */
+const cardTask3 = createCardJs();
+const titleTask3 = document.createElement('h4');
+titleTask3.innerHTML = `Task3 - Array di Oggetti`;
+cardTask3.appendChild(titleTask3);
+
