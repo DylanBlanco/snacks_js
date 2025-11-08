@@ -7,6 +7,25 @@ RESET
     box-sizing: border-box;
 }
 
+
+/******************************************
+ * STILI PER LA CARD
+******************************************/
+.card-js {
+    width: 350px;
+    height: 200px;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    /* flex-wrap: wrap; */
+    overflow-y: auto;
+    font-size: 1.5rem;
+    background-color: #eee8e8;
+    padding: 1rem 0.5rem;
+}
+
+
 /******************************************
  * GENERAL STYLES
 ******************************************/
@@ -39,26 +58,14 @@ main {
 
 ul {
     list-style: none;
-    margin-bottom: 0.5rem;
+    margin: 0.5rem 0;
 }
 
 li {
     margin-left: 20px;
 }
 
-/******************************************
- * STILI PER LA CARD
-******************************************/
-.card-js {
-    width: 350px;
-    height: 200px;
-    border: 1px solid black;
-    display: flex;
-    flex-direction: column;
-    /* justify-content: center; */
-    /* flex-wrap: wrap; */
-    overflow-y: auto;
-    font-size: 1.5rem;
-    background-color: #eee8e8;
-    padding: 1rem 0.5rem;
+.filter-student-container {
+    font-size: 15px;
+    margin: 0.5rem 0;
 }

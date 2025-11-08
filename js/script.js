@@ -165,6 +165,7 @@ cardTask3.appendChild(resultStudents);
 
 // const numStudents = studenti.length;
 resultStudents.innerHTML += `Numero totale degli Studenti: <b>${studenti.length}</b>`;
+resultStudents.innerHTML += `<hr>`
 
 studenti.forEach((s, i) => {
     resultStudents.innerHTML +=
@@ -181,3 +182,21 @@ studenti.forEach((s, i) => {
         </ul>
     `;
 });
+resultStudents.innerHTML += `<hr>`
+
+const filterStudentContainer = document.createElement('div');
+filterStudentContainer.classList.add('filter-student-container');
+cardTask3.appendChild(filterStudentContainer);
+
+const studentiInformatica = studenti.filter(s => s.corso === "Informatica");
+filterStudentContainer.innerHTML += `<h4>Studenti del Corso "Informatica" (${studentiInformatica.length}):</h4>`;
+studentiInformatica.forEach((studente, i) => {
+    filterStudentContainer.innerHTML += 
+    `
+        <ul>Studente ${i+1}, ${studente.cognome} ${studente.nome}
+            <li>ID studente: ${studente.id}</li>
+            <li>Età: ${studente.eta}</li>
+            <li>Corso: ${studente.corso}</li>
+        </ul>
+    `;
+})
