@@ -18,6 +18,12 @@ function createCardJs() {
     return cardJs;
 }
 
+function createInputContainer() {
+    const inputContainer = document.createElement('div');
+    inputContainer.classList.add('input-container');
+    return inputContainer;
+}
+
 
 /* ---------------------------------------------------------------------------------------------------
     TASK1 - calcola la somma di due numeri
@@ -26,11 +32,8 @@ const cardTask1 = createCardJs();  // aggiungi card alla pagina
 const titleT1 = document.createElement('h4');
 titleT1.innerHTML = 'Task1 - Somma di due numeri';
 cardTask1.appendChild(titleT1);
+const inputContainerT1 = cardTask1.appendChild(createInputContainer());
 
-const divInputT1 = document.createElement('div');
-divInputT1.style.marginTop = '10px';
-divInputT1.style.marginBottom = '10px';
-cardTask1.appendChild(divInputT1);
 
 const inputNum1 = document.createElement('input');
 inputNum1.type = 'number';
@@ -47,9 +50,9 @@ inputNum2.style.marginRight = '5px';
 const btnCalcSumTask1 = document.createElement('button');
 btnCalcSumTask1.innerHTML = 'Calcola';
 btnCalcSumTask1.style.width = '20%';
-divInputT1.appendChild(inputNum1);
-divInputT1.appendChild(inputNum2);
-divInputT1.appendChild(btnCalcSumTask1);
+inputContainerT1.appendChild(inputNum2);
+inputContainerT1.appendChild(inputNum1);
+inputContainerT1.appendChild(btnCalcSumTask1);
 
 const resultSum = document.createElement('div');
 cardTask1.appendChild(resultSum);
@@ -70,10 +73,7 @@ const cardTask2 = createCardJs();
 const titleTask2 = document.createElement('h4');
 titleTask2.innerHTML = 'Task2 - inserisci 5 giocattoli';
 cardTask2.appendChild(titleTask2);
-const divInputT2 = document.createElement('div');
-divInputT2.style.marginTop = '10px';
-divInputT2.style.marginBottom = '10px';
-cardTask2.appendChild(divInputT2);
+const inputContainerT2 = cardTask2.appendChild(createInputContainer());
 
 const toysArray = [];
 
@@ -82,12 +82,12 @@ inputToy.type = 'text';
 inputToy.placeholder = 'inserisci nome giocattolo';
 inputToy.style.width = '80%';
 inputToy.style.marginRight = '5px';
-divInputT2.appendChild(inputToy);
+inputContainerT2.appendChild(inputToy);
 
 const btnAddToy = document.createElement('button');
 btnAddToy.innerHTML = 'Add Toy';
 btnAddToy.style.width = '18%';
-divInputT2.appendChild(btnAddToy);
+inputContainerT2.appendChild(btnAddToy);
 
 const resultToys = document.createElement('div');
 cardTask2.appendChild(resultToys);
@@ -110,3 +110,49 @@ btnAddToy.addEventListener('click', () => {
         });
     }
 });
+
+/* ---------------------------------------------------------------------------------------------------
+    * TASK3 - Chiedi all'utente di inserire una parola e conta lunghezza parola
+--------------------------------------------------------------------------------------------------- */
+
+
+
+
+
+
+
+
+
+
+
+
+// const cardTask3 = createCardJs();
+// const titleTask3 = document.createElement('h4');
+// titleTask3.innerHTML = 'Task3 - Conta lunghezza parola';
+// cardTask3.appendChild(titleTask3);
+
+// const divInputT3 = document.createElement('div');
+// divInputT3.style.marginTop = '10px';
+// divInputT3.style.marginBottom = '10px';
+// cardTask3.appendChild(divInputT3);
+
+// const inputWord = document.createElement('input');
+// inputWord.type = 'text';
+// inputWord.placeholder = 'inserisci una parola';
+// inputWord.style.width = '80%';
+// inputWord.style.marginRight = '5px';
+// divInputT3.appendChild(inputWord);
+
+// const btnCountLength = document.createElement('button');
+// btnCountLength.innerHTML = 'Conta';
+// btnCountLength.style.width = '18%';
+// divInputT3.appendChild(btnCountLength);
+
+// const resultLength = document.createElement('div');
+// cardTask3.appendChild(resultLength);
+
+// btnCountLength.addEventListener('click', () => {
+//     const word = inputWord.value.trim();
+//     const length = word.length;
+//     resultLength.innerHTML = `Lunghezza parola: ${length}`;
+// });
