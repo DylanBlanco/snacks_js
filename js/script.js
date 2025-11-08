@@ -111,48 +111,10 @@ btnAddToy.addEventListener('click', () => {
     }
 });
 
+
 /* ---------------------------------------------------------------------------------------------------
-    * TASK3 - Chiedi all'utente di inserire una parola e conta lunghezza parola
+    * TASK3 - Dato un array di oggetti,
+            Stampa risultato,
+            Calcola il numero totale degli studenti,
+            Trova tutti gli studenti di un corso specifico
 --------------------------------------------------------------------------------------------------- */
-
-
-
-
-
-
-
-
-
-
-
-
-// const cardTask3 = createCardJs();
-// const titleTask3 = document.createElement('h4');
-// titleTask3.innerHTML = 'Task3 - Conta lunghezza parola';
-// cardTask3.appendChild(titleTask3);
-
-// const divInputT3 = document.createElement('div');
-// divInputT3.style.marginTop = '10px';
-// divInputT3.style.marginBottom = '10px';
-// cardTask3.appendChild(divInputT3);
-
-// const inputWord = document.createElement('input');
-// inputWord.type = 'text';
-// inputWord.placeholder = 'inserisci una parola';
-// inputWord.style.width = '80%';
-// inputWord.style.marginRight = '5px';
-// divInputT3.appendChild(inputWord);
-
-// const btnCountLength = document.createElement('button');
-// btnCountLength.innerHTML = 'Conta';
-// btnCountLength.style.width = '18%';
-// divInputT3.appendChild(btnCountLength);
-
-// const resultLength = document.createElement('div');
-// cardTask3.appendChild(resultLength);
-
-// btnCountLength.addEventListener('click', () => {
-//     const word = inputWord.value.trim();
-//     const length = word.length;
-//     resultLength.innerHTML = `Lunghezza parola: ${length}`;
-// });
