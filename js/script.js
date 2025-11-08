@@ -163,6 +163,9 @@ const resultStudents = document.createElement('div');
 resultStudents.style.fontSize = '14px';
 cardTask3.appendChild(resultStudents);
 
+// const numStudents = studenti.length;
+resultStudents.innerHTML += `Numero totale degli Studenti: <b>${studenti.length}</b>`;
+
 studenti.forEach((s, i) => {
     resultStudents.innerHTML +=
     `
