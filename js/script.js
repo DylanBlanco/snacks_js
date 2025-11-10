@@ -287,3 +287,14 @@ function showText () {
         displayText.innerHTML = `Inserisci almeno una frase`;
     }
 }
+
+btnNext.addEventListener('click', () => {
+    // Non fare nulla se l'array è vuoto
+    if (textArray.length === 0){
+        return
+    } 
+
+    // Incrementa l'indice e usa il modulo (%) per tornare a 0 se supera la fine
+    currentIndex = (currentIndex + 1) % textArray.length;
+    showText(); // Aggiorna il testo visualizzato
+});
