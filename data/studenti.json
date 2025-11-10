@@ -1,0 +1,107 @@
+[
+    {
+        "id": 1001,
+        "nome": "Mario",
+        "cognome": "Rossi",
+        "eta": 20,
+        "corso": "Informatica"
+    },
+    {
+        "id": 1002,
+        "nome": "Anna",
+        "cognome": "Verdi",
+        "eta": 22,
+        "corso": "Ingegneria"
+    },
+    {
+        "id": 1003,
+        "nome": "Luca",
+        "cognome": "Bianchi",
+        "eta": 19,
+        "corso": "Lettere"
+    },
+    {
+        "id": 1004,
+        "nome": "Sara",
+        "cognome": "Russo",
+        "eta": 21,
+        "corso": "Economia"
+    },
+    {
+        "id": 1005,
+        "nome": "Paolo",
+        "cognome": "Ferrari",
+        "eta": 23,
+        "corso": "Medicina"
+    },
+    {
+        "id": 1006,
+        "nome": "Giulia",
+        "cognome": "Esposito",
+        "eta": 20,
+        "corso": "Giurisprudenza"
+    },
+    {
+        "id": 1007,
+        "nome": "Marco",
+        "cognome": "Gallo",
+        "eta": 24,
+        "corso": "Architettura"
+    },
+    {
+        "id": 1008,
+        "nome": "Chiara",
+        "cognome": "Greco",
+        "eta": 19,
+        "corso": "Informatica"
+    },
+    {
+        "id": 1009,
+        "nome": "Leonardo",
+        "cognome": "Conti",
+        "eta": 22,
+        "corso": "Ingegneria"
+    },
+    {
+        "id": 1010,
+        "nome": "Sofia",
+        "cognome": "Rizzo",
+        "eta": 21,
+        "corso": "Lettere"
+    },
+    {
+        "id": 1011,
+        "nome": "Alessandro",
+        "cognome": "Rossi",
+        "eta": 20,
+        "corso": "Economia"
+    },
+    {
+        "id": 1012,
+        "nome": "Elisa",
+        "cognome": "Verdi",
+        "eta": 23,
+        "corso": "Medicina"
+    },
+    {
+        "id": 1013,
+        "nome": "Matteo",
+        "cognome": "Bianchi",
+        "eta": 19,
+        "corso": "Giurisprudenza"
+    },
+    {
+        "id": 1014,
+        "nome": "Beatrice",
+        "cognome": "Russo",
+        "eta": 22,
+        "corso": "Architettura"
+    },
+    {
+        "id": 1015,
+        "nome": "Davide",
+        "cognome": "Ferrari",
+        "eta": 21,
+        "corso": "Informatica"
+    }
+]
