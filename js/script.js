@@ -228,11 +228,11 @@ const textsResult = document.createElement('div');
 textsResult.style.fontSize = '15px';
 cardTask4.appendChild(textsResult);
 
-textArray = [];
+let textArray = [];
 
 btnAddText.addEventListener('click', () => {
     const textFrase = inputText.value.trim();
-
+    
     if (textFrase && textArray.length < 3) {
         textArray.push(textFrase);
         inputText.value = '';
@@ -242,9 +242,24 @@ btnAddText.addEventListener('click', () => {
         textArray.forEach((frase, i) => {
             textsResult.innerHTML += `<p>(${i+1}) ${frase}</p>`;
         });
+
+        textsResult.innerHTML += `<hr>`;
     }
     else {
         textsResult.innerHTML += `Hai già inserito 3 Frasi`;
         inputText.value = '';
     }
 });
+
+const carouselTextContainer = document.createElement('div');
+cardTask4.appendChild(carouselTextContainer);
+
+const displayText = document.createElement('div');
+carouselTextContainer.appendChild(displayText);
+
+const btnPrev = document.createElement('button');
+const btnNext = document.createElement('button');
+btnPrev.innerHTML = `< Prev`;
+btnNext.innerHTML = `Next >`;
+carouselTextContainer.appendChild(btnPrev);
+carouselTextContainer.appendChild(btnNext);
