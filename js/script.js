@@ -312,3 +312,10 @@ btnPrev.addEventListener('click', () => {
 
 // Imposta il testo iniziale del carosello (mostrerà il messaggio di default)
 showText();
+
+
+/* ---------------------------------------------------------------------------------------------------
+    * TASK5 - crea una card di uno studente usando i dati del Json,
+                fai un carosello con i dati degli studenti
+--------------------------------------------------------------------------------------------------- */
+import studenti from '../data/studenti.json';
