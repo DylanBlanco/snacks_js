@@ -200,3 +200,26 @@ studentiInformatica.forEach((studente, i) => {
         </ul>
     `;
 })
+
+
+/* ---------------------------------------------------------------------------------------------------
+    * TASK4 - Chiedi a utente di scrivere 3 frasi,
+            con queste frasi fai un carosello
+--------------------------------------------------------------------------------------------------- */
+const cardTask4 = createCardJs();
+const titleTask4 = document.createElement('h4');
+titleTask4.innerHTML = `Task4 - Array di frasi`;
+cardTask4.appendChild(titleTask4);
+
+const inputContainerT4 = cardTask4.appendChild(createInputContainer());
+const inputText = document.createElement('input');
+inputText.type = 'text';
+inputText.placeholder = 'Scrivi una frase';
+inputText.style.width = '75%';
+inputText.style.marginRight = '5px';
+inputContainerT4.appendChild(inputText);
+
+const btnAddText = document.createElement('button');
+btnAddText.innerHTML = 'Aggiungi';
+btnAddText.style.width = '20%';
+inputContainerT4.appendChild(btnAddText);
