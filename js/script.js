@@ -298,3 +298,15 @@ btnNext.addEventListener('click', () => {
     currentIndex = (currentIndex + 1) % textArray.length;
     showText(); // Aggiorna il testo visualizzato
 });
+
+btnPrev.addEventListener('click', () => {
+    if (textArray.length === 0) {
+        return
+    }
+
+    currentIndex = (currentIndex - 1 + textArray.length) % textArray.length;  // (index - 1 + length) % length: gestisce i numeri negativi nel modulo
+    showText();
+});
+
+// Imposta il testo iniziale del carosello (mostrerà il messaggio di default)
+showText();
