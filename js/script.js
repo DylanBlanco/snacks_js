@@ -208,7 +208,7 @@ studentiInformatica.forEach((studente, i) => {
 --------------------------------------------------------------------------------------------------- */
 const cardTask4 = createCardJs();
 const titleTask4 = document.createElement('h4');
-titleTask4.innerHTML = `Task4 - Array di frasi`;
+titleTask4.innerHTML += `Task4 - Array di frasi`;
 cardTask4.appendChild(titleTask4);
 
 const inputContainerT4 = cardTask4.appendChild(createInputContainer());
@@ -220,6 +220,31 @@ inputText.style.marginRight = '5px';
 inputContainerT4.appendChild(inputText);
 
 const btnAddText = document.createElement('button');
-btnAddText.innerHTML = 'Aggiungi';
+btnAddText.innerHTML += 'Aggiungi';
 btnAddText.style.width = '20%';
 inputContainerT4.appendChild(btnAddText);
+
+const textsResult = document.createElement('div');
+textsResult.style.fontSize = '15px';
+cardTask4.appendChild(textsResult);
+
+textArray = [];
+
+btnAddText.addEventListener('click', () => {
+    const textFrase = inputText.value.trim();
+
+    if (textFrase && textArray.length < 3) {
+        textArray.push(textFrase);
+        inputText.value = '';
+        // textsResult.innerHTML += '<h3>Elenco Frasi:</h3>';  // resetta il contenuto per non aggiunegere ogni volta la lista
+        textsResult.innerHTML = '<h3>Elenco Frasi:</h3>';
+        
+        textArray.forEach((frase, i) => {
+            textsResult.innerHTML += `<p>(${i+1}) ${frase}</p>`;
+        });
+    }
+    else {
+        textsResult.innerHTML += `Hai già inserito 3 Frasi`;
+        inputText.value = '';
+    }
+});
