@@ -200,3 +200,115 @@ studentiInformatica.forEach((studente, i) => {
         </ul>
     `;
 })
+
+
+/* ---------------------------------------------------------------------------------------------------
+    * TASK4 - Chiedi a utente di scrivere 3 frasi,
+            con queste frasi fai un carosello
+--------------------------------------------------------------------------------------------------- */
+const cardTask4 = createCardJs();
+const titleTask4 = document.createElement('h4');
+titleTask4.innerHTML += `Task4 - Array di frasi`;
+cardTask4.appendChild(titleTask4);
+
+const inputContainerT4 = cardTask4.appendChild(createInputContainer());
+const inputText = document.createElement('input');
+inputText.type = 'text';
+inputText.placeholder = 'Scrivi una frase';
+inputText.style.width = '75%';
+inputText.style.marginRight = '5px';
+inputContainerT4.appendChild(inputText);
+
+const btnAddText = document.createElement('button');
+btnAddText.innerHTML += 'Aggiungi';
+btnAddText.style.width = '20%';
+inputContainerT4.appendChild(btnAddText);
+
+const textsResult = document.createElement('div');
+textsResult.style.fontSize = '14px';
+cardTask4.appendChild(textsResult);
+
+let textArray = [];
+
+btnAddText.addEventListener('click', () => {
+    const textFrase = inputText.value.trim();
+    
+    if (textFrase && textArray.length < 3) {
+        textArray.push(textFrase);
+        inputText.value = '';
+        // textsResult.innerHTML += '<h3>Elenco Frasi:</h3>';  // resetta il contenuto per non aggiunegere ogni volta la lista
+        textsResult.innerHTML = '<h3>Elenco Frasi:</h3>';
+        
+        textArray.forEach((frase, i) => {
+            textsResult.innerHTML += `<p>(${i+1}) ${frase}</p>`;
+        });
+
+        textsResult.innerHTML += `<hr>`;
+    }
+    else if (textArray.length >= 3) {
+        textsResult.innerHTML += `Hai già inserito 3 Frasi`;
+        inputText.value = '';
+    }
+    
+    showText();  // MOstra Prima frase se presente
+});
+
+const carouselTextContainer = document.createElement('div');
+carouselTextContainer.style.backgroundColor = '#f0f0f0';
+carouselTextContainer.style.display = 'flex';
+carouselTextContainer.style.justifyContent = 'space-between';
+carouselTextContainer.style.alignItems = 'center';
+cardTask4.appendChild(carouselTextContainer);
+
+const displayText = document.createElement('div');
+// displayText.innerHTML = `frase di prova`;
+displayText.style.fontSize = '18px';
+displayText.style.backgroundColor = '#dad6d6ff';
+displayText.style.padding = '10px';
+displayText.style.flexGrow = '1'; // Occupa lo spazio disponibile
+displayText.style.textAlign = 'center';
+displayText.style.margin = '0 5px';
+carouselTextContainer.appendChild(displayText);
+
+const btnPrev = document.createElement('button');
+const btnNext = document.createElement('button');
+btnPrev.innerHTML = `< Prev`;
+btnNext.innerHTML = `Next >`;
+
+carouselTextContainer.appendChild(btnPrev);
+carouselTextContainer.appendChild(displayText);
+carouselTextContainer.appendChild(btnNext);
+
+let currentIndex = 0;
+
+function showText () {
+    if (textArray.length > 0) {
+        displayText.innerHTML = textArray[currentIndex];
+    }
+    else {
+        displayText.innerHTML = `Inserisci almeno una frase`;
+    }
+}
+
+btnNext.addEventListener('click', () => {
+    // Non fare nulla se l'array è vuoto
+    if (textArray.length === 0){
+        return
+    } 
+
+    // Incrementa l'indice e usa il modulo (%) per tornare a 0 se supera la fine
+    currentIndex = (currentIndex + 1) % textArray.length;
+    showText(); // Aggiorna il testo visualizzato
+});
+
+btnPrev.addEventListener('click', () => {
+    if (textArray.length === 0) {
+        return
+    }
+
+    currentIndex = (currentIndex - 1 + textArray.length) % textArray.length;  // (index - 1 + length) % length: gestisce i numeri negativi nel modulo
+    showText();
+});
+
+// Imposta il testo iniziale del carosello (mostrerà il messaggio di default)
+showText();
