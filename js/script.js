@@ -249,6 +249,8 @@ btnAddText.addEventListener('click', () => {
         textsResult.innerHTML += `Hai già inserito 3 Frasi`;
         inputText.value = '';
     }
+    
+    showText();  // MOstra Prima frase se presente
 });
 
 const carouselTextContainer = document.createElement('div');
