@@ -225,7 +225,7 @@ btnAddText.style.width = '20%';
 inputContainerT4.appendChild(btnAddText);
 
 const textsResult = document.createElement('div');
-textsResult.style.fontSize = '15px';
+textsResult.style.fontSize = '14px';
 cardTask4.appendChild(textsResult);
 
 let textArray = [];
@@ -245,21 +245,45 @@ btnAddText.addEventListener('click', () => {
 
         textsResult.innerHTML += `<hr>`;
     }
-    else {
+    else if (textArray.length >= 3) {
         textsResult.innerHTML += `Hai già inserito 3 Frasi`;
         inputText.value = '';
     }
 });
 
 const carouselTextContainer = document.createElement('div');
+carouselTextContainer.style.backgroundColor = '#f0f0f0';
+carouselTextContainer.style.display = 'flex';
+carouselTextContainer.style.justifyContent = 'space-between';
+carouselTextContainer.style.alignItems = 'center';
 cardTask4.appendChild(carouselTextContainer);
 
 const displayText = document.createElement('div');
+// displayText.innerHTML = `frase di prova`;
+displayText.style.fontSize = '18px';
+displayText.style.backgroundColor = '#dad6d6ff';
+displayText.style.padding = '10px';
+displayText.style.flexGrow = '1'; // Occupa lo spazio disponibile
+displayText.style.textAlign = 'center';
+displayText.style.margin = '0 5px';
 carouselTextContainer.appendChild(displayText);
 
 const btnPrev = document.createElement('button');
 const btnNext = document.createElement('button');
 btnPrev.innerHTML = `< Prev`;
 btnNext.innerHTML = `Next >`;
+
 carouselTextContainer.appendChild(btnPrev);
+carouselTextContainer.appendChild(displayText);
 carouselTextContainer.appendChild(btnNext);
+
+let currentIndex = 0;
+
+function showText () {
+    if (textArray.length > 0) {
+        displayText.innerHTML = textArray[currentIndex];
+    }
+    else {
+        displayText.innerHTML = `Inserisci almeno una frase`;
+    }
+}
