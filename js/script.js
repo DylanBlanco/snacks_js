@@ -330,3 +330,35 @@ cardTask5.appendChild(titleTask5);
 const cardStudente = document.createElement('div');
 cardStudente.classList.add('card-studente');
 cardTask5.appendChild(cardStudente);
+
+// === Recupero del JSON ===
+fetch('./data/studenti.json')
+    .then(response => {
+            if (!response.ok) {
+            throw new Error('Errore nel caricamento del file JSON');
+            }
+        return response.json();
+    })
+    .then(studenti => {
+        // Prendo il primo studente (puoi cambiare indice o aggiungere logica)
+        const studente = studenti[0];
+
+        // Creo gli elementi HTML da inserire nella card
+        const nome = document.createElement('p');
+        nome.textContent = `Nome: ${studente.nome}`;
+
+        const cognome = document.createElement('p');
+        cognome.textContent = `Cognome: ${studente.cognome}`;
+
+        const eta = document.createElement('p');
+        eta.textContent = `Età: ${studente.eta}`;
+
+        const corso = document.createElement('p');
+        corso.textContent = `Corso: ${studente.corso}`;
+
+        // Aggiungo tutto alla cardStudente
+        cardStudente.append(nome, cognome, eta, corso);
+    })
+    .catch(error => {
+        console.error('Errore:', error);
+    });
