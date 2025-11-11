@@ -318,4 +318,15 @@ showText();
     * TASK5 - crea una card di uno studente usando i dati del Json,
                 fai un carosello con i dati degli studenti
 --------------------------------------------------------------------------------------------------- */
-import studenti from '../data/studenti.json';
+// import studenti from '../data/studenti.json';
+
+const cardTask5 = createCardJs();
+const titleTask5 = document.createElement('h4');
+titleTask5.innerHTML += `Task5 - Studenti Json`;
+cardTask5.style.display = 'flex';
+cardTask5.style.alignItems = 'center';
+cardTask5.appendChild(titleTask5);
+
+const cardStudente = document.createElement('div');
+cardStudente.classList.add('card-studente');
+cardTask5.appendChild(cardStudente);
