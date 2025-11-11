@@ -331,34 +331,72 @@ const cardStudente = document.createElement('div');
 cardStudente.classList.add('card-studente');
 cardTask5.appendChild(cardStudente);
 
-// === Recupero del JSON ===
-fetch('./data/studenti.json')
-    .then(response => {
-            if (!response.ok) {
-            throw new Error('Errore nel caricamento del file JSON');
-            }
-        return response.json();
-    })
-    .then(studenti => {
-        // Prendo il primo studente (puoi cambiare indice o aggiungere logica)
-        const studente = studenti[0];
+// // === Recupero del JSON ===
+// fetch('./data/studenti.json')
+//     .then(response => {
+//             if (!response.ok) {
+//             throw new Error('Errore nel caricamento del file JSON');
+//             }
+//         return response.json();
+//     })
+//     .then(studenti => {
+//         // Prendo il primo studente (puoi cambiare indice o aggiungere logica)
+//         const studente = studenti[0];
 
-        // Creo gli elementi HTML da inserire nella card
-        const nome = document.createElement('p');
-        nome.textContent = `Nome: ${studente.nome}`;
+//         // Creo gli elementi HTML da inserire nella card
+//         const nome = document.createElement('p');
+//         nome.textContent = `Nome: ${studente.nome}`;
 
-        const cognome = document.createElement('p');
-        cognome.textContent = `Cognome: ${studente.cognome}`;
+//         const cognome = document.createElement('p');
+//         cognome.textContent = `Cognome: ${studente.cognome}`;
 
-        const eta = document.createElement('p');
-        eta.textContent = `Età: ${studente.eta}`;
+//         const eta = document.createElement('p');
+//         eta.textContent = `Età: ${studente.eta}`;
 
-        const corso = document.createElement('p');
-        corso.textContent = `Corso: ${studente.corso}`;
+//         const corso = document.createElement('p');
+//         corso.textContent = `Corso: ${studente.corso}`;
 
-        // Aggiungo tutto alla cardStudente
-        cardStudente.append(nome, cognome, eta, corso);
-    })
-    .catch(error => {
-        console.error('Errore:', error);
-    });
+//         // Aggiungo tutto alla cardStudente
+//         cardStudente.append(nome, cognome, eta, corso);
+//     })
+//     .catch(error => {
+//         console.error('Errore:', error);
+//     });
+
+// Funzione asincrona per caricare i dati
+async function caricaStudente() {
+    try {
+        // 1. Richiama il file JSON dalla cartella /data/
+        // Assicurati che il percorso 'data/studenti.json' sia corretto
+        // rispetto al tuo file HTML.
+        const response = await fetch('data/studenti.json');
+
+        // 2. Controlla se la richiesta è andata a buon fine
+        if (!response.ok) {
+            throw new Error(`Errore HTTP: ${response.status}`);
+        }
+
+        // 3. Converti la risposta in un oggetto JSON (l'array)
+        const studenti = await response.json();
+
+        // 4. Prendi il primo studente dall'array (studenti[0])
+        const primoStudente = studenti[0];
+
+        // 5. Inserisci i dati dello studente nella card
+        // Usiamo innerHTML per formattare un po' il testo
+        cardStudente.innerHTML = `
+            <p><strong>Nome:</strong> ${primoStudente.nome}</p>
+            <p><strong>Cognome:</strong> ${primoStudente.cognome}</p>
+            <p><strong>Età:</strong> ${primoStudente.eta}</p>
+            <p><strong>Corso:</strong> ${primoStudente.corso}</p>
+        `;
+
+    } catch (error) {
+        // 6. Gestisci eventuali errori (es. file non trovato)
+        console.error("Impossibile caricare il file studenti.json:", error);
+        cardStudente.textContent = "Errore nel caricamento dei dati.";
+    }
+}
+
+// 7. Chiama la funzione per eseguire il caricamento
+caricaStudente();
