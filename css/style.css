@@ -25,6 +25,19 @@ RESET
     padding: 1rem 0.5rem;
 }
 
+.card-studente {
+    font-size: 15px;
+    width: 80%;
+    height: 50%;
+    background-color: rgb(57, 136, 176);
+    border-radius: 20px;
+    margin-top: 10px;
+    padding: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 
 /******************************************
  * GENERAL STYLES
