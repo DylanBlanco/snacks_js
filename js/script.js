@@ -318,8 +318,6 @@ showText();
     * TASK5 - crea una card di uno studente usando i dati del Json,
                 fai un carosello con i dati degli studenti
 --------------------------------------------------------------------------------------------------- */
-// import studenti from '../data/studenti.json';
-
 const cardTask5 = createCardJs();
 const titleTask5 = document.createElement('h4');
 titleTask5.innerHTML += `Task5 - Studenti Json`;
@@ -331,40 +329,38 @@ const cardStudente = document.createElement('div');
 cardStudente.classList.add('card-studente');
 cardTask5.appendChild(cardStudente);
 
-// Funzione asincrona per caricare i dati
-async function caricaStudente() {
-    try {
-        // 1. Richiama il file JSON dalla cartella /data/
-        // Assicurati che il percorso 'data/studenti.json' sia corretto
-        // rispetto al tuo file HTML.
-        const response = await fetch('data/studenti.json');
+// // Funzione asincrona per caricare i dati
+// async function caricaStudente() {
+//     try {
+//         // 1. Richiama il file JSON dalla cartella /data/
+//         const response = await fetch('data/studenti.json');
 
-        // 2. Controlla se la richiesta è andata a buon fine
-        if (!response.ok) {
-            throw new Error(`Errore HTTP: ${response.status}`);
-        }
+//         // 2. Controlla se la richiesta è andata a buon fine
+//         if (!response.ok) {
+//             throw new Error(`Errore HTTP: ${response.status}`);
+//         }
 
-        // 3. Converti la risposta in un oggetto JSON (l'array)
-        const studenti = await response.json();
+//         // 3. Converti la risposta in un oggetto JSON (l'array)
+//         const studenti = await response.json();
 
-        // 4. Prendi il primo studente dall'array (studenti[0])
-        const primoStudente = studenti[0];
+//         // 4. Prendi il primo studente dall'array (studenti[0])
+//         const primoStudente = studenti[0];
 
-        // 5. Inserisci i dati dello studente nella card
-        // Usiamo innerHTML per formattare un po' il testo
-        cardStudente.innerHTML = `
-            <p><strong>Nome:</strong> ${primoStudente.nome}</p>
-            <p><strong>Cognome:</strong> ${primoStudente.cognome}</p>
-            <p><strong>Età:</strong> ${primoStudente.eta}</p>
-            <p><strong>Corso:</strong> ${primoStudente.corso}</p>
-        `;
+//         // 5. Inserisci i dati dello studente nella card
+//         // Usiamo innerHTML per formattare un po' il testo
+//         cardStudente.innerHTML = `
+//             <p><strong>Nome:</strong> ${primoStudente.nome}</p>
+//             <p><strong>Cognome:</strong> ${primoStudente.cognome}</p>
+//             <p><strong>Età:</strong> ${primoStudente.eta}</p>
+//             <p><strong>Corso:</strong> ${primoStudente.corso}</p>
+//         `;
 
-    } catch (error) {
-        // 6. Gestisci eventuali errori (es. file non trovato)
-        console.error("Impossibile caricare il file studenti.json:", error);
-        cardStudente.textContent = "Errore nel caricamento dei dati.";
-    }
-}
+//     } catch (error) {
+//         // 6. Gestisci eventuali errori (es. file non trovato)
+//         console.error("Impossibile caricare il file studenti.json:", error);
+//         cardStudente.textContent = "Errore nel caricamento dei dati.";
+//     }
+// }
 
-// 7. Chiama la funzione per eseguire il caricamento
-caricaStudente();
+// // 7. Chiama la funzione per eseguire il caricamento
+// caricaStudente();
